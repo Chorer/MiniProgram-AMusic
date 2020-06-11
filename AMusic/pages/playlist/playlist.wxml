@@ -1,0 +1,16 @@
+<view class="playlist">
+  <view class="swiper">
+    <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="2000" duration="1000">
+      <block wx:for="{{swiperImgUrl}}">
+        <swiper-item>
+          <image class="swiperImg" src="{{item.url}}" mode="widthFix" ></image>
+        </swiper-item>
+      </block>
+    </swiper>    
+  </view>
+  <view class="cards">
+    <block wx:for="{{cardInfo}}">
+      <m-playcard cardInfo="{{item}}"></m-playcard>
+    </block>
+  </view>
+</view>
