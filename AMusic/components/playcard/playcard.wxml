@@ -1,5 +1,5 @@
 <view class="card">
   <image class="card-img" src="{{cardInfo.picUrl}}"></image>
   <view class="card-name">{{cardInfo.name}}</view>
-  <text class="card-count">{{cardInfo.playCount}}</text>
+  <text class="card-count">{{realNum}}</text>
 </view>

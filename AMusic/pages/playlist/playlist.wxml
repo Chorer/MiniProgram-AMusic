@@ -1,7 +1,7 @@
 <view class="playlist">
   <view class="swiper">
     <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="2000" duration="1000">
-      <block wx:for="{{swiperImgUrl}}">
+      <block wx:for="{{swiperImgUrl}}" wx:key="url">
         <swiper-item>
           <image class="swiperImg" src="{{item.url}}" mode="widthFix" ></image>
         </swiper-item>
@@ -9,7 +9,7 @@
     </swiper>    
   </view>
   <view class="cards">
-    <block wx:for="{{cardInfo}}">
+    <block wx:for="{{cardInfo}}" wx:key="id">
       <m-playcard cardInfo="{{item}}"></m-playcard>
     </block>
   </view>
