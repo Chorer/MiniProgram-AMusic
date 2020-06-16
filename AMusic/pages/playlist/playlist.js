@@ -50,6 +50,7 @@ Page({
     wx.cloud.callFunction({
       name:'music',
       data:{
+        $url:'getPlaylist',
         start: this.data.cardInfo.length,
         limit: LIMIT
       }

@@ -29,6 +29,11 @@ Component({
         rightPoint = numStr.substring(numStr.length - 8,numStr.length - 8 + point)
         return parseFloat(leftInt + '.' + rightPoint) + '亿'
       }
+    },
+    toMusiclist(){
+      wx.navigateTo({
+        url: `../../pages/musiclist/musiclist?musicid=${this.properties.cardInfo.id}`
+      });
     }
   }
 })
