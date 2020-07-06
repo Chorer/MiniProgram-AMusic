@@ -4,6 +4,7 @@
     "pages/blog/blog",
     "pages/profile/profile",
     "pages/musiclist/musiclist",
+    "pages/player/player",
     "pages/test/test"
   ],
   "window": {

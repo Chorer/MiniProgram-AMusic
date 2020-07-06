@@ -1,0 +1,7 @@
+<view class="player-container" style="background:url({{picUrl}}) no-repeat center/cover"></view>
+<view class="player-mask"></view>
+<view class="player-info">
+  <view class="player-disc">
+    <image class="player-img" src="{{picUrl}}"></image>
+  </view>
+</view>
