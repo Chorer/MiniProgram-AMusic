@@ -21,6 +21,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"useIsolateContext": true,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
@@ -30,6 +31,7 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -64,6 +66,13 @@
 					"name": "pages/test/test",
 					"pathName": "pages/test/test",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/musiclist/musiclist",
+					"pathName": "pages/musiclist/musiclist",
+					"query": "musicid=440961323",
 					"scene": null
 				}
 			]

@@ -24,8 +24,14 @@ exports.main = async (event, context) => {
   })
   // 歌曲列表中间件
   app.router('getMusiclist',async(ctx,next) => {
-    ctx.body = await rp(BASE_URL + '/playlist/detail?id=' + event.musicid).then(res => {
+    ctx.body = await rp(BASE_URL + `/playlist/detail?id=${event.musicid}`).then(res => {
       return JSON.parse(res).playlist
+    })
+  })
+  // 歌曲播放链接中间件
+  app.router('getMusicUrl',async(ctx,next) => {
+    ctx.body = await rp(BASE_URL + `/song/url?id=${event.musicId}`).then(res => {
+      return res
     })
   })
   return app.serve()

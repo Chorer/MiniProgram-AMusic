@@ -1,7 +1,20 @@
+<!--背景遮罩-->
 <view class="player-container" style="background:url({{picUrl}}) no-repeat center/cover"></view>
 <view class="player-mask"></view>
+
 <view class="player-info">
-  <view class="player-disc">
-    <image class="player-img" src="{{picUrl}}"></image>
+  <!--唱片-->
+  <view class="player-disc {{isPlaying ? 'discRotation':''}}">
+    <image class="player-img imgRotation {{isPlaying ? '':'imgRotationPause'}}" src="{{picUrl}}"></image>
   </view>
+  <!--进度条-->
+  <view class="player-progress-bar">
+    <m-progressbar />
+  </view>
+  <!--播放控制器-->
+  <view class="player-control">
+    <text class="iconfont icon-shangyishou" bindtap="preMusic"></text>
+    <text class="iconfont {{isPlaying ? 'icon-zanting':'icon-bofang'}}" bindtap="toggleState"></text>
+    <text class="iconfont icon-xiayishou" bindtap="nextMusic"></text>
+  </view>  
 </view>

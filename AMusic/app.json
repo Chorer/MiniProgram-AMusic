@@ -7,6 +7,9 @@
     "pages/player/player",
     "pages/test/test"
   ],
+  "requiredBackgroundModes":[
+    "audio"
+  ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
     "navigationBarTextStyle": "white",
