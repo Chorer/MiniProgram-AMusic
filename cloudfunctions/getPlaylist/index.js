@@ -6,7 +6,7 @@ const db = cloud.database()
 
 const rp = require('request-promise')
 const URL = 'http://musicapi.xiecheng.live/personalized'
-const MAX_LIMIT = 10
+const MAX_LIMIT = 50
 
 // 云函数入口函数
 exports.main = async (event, context) => {

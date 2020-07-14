@@ -1,22 +1,20 @@
-// components/musiclist/musiclist.js
+const app =  getApp();
+
+
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
     musiclist: Array
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     currentId: -1
   },
-
-  /**
-   * 组件的方法列表
-   */
+  pageLifetimes:{
+    show(){
+      this.setData({
+        currentId: parseInt(app.getCurrentMusicId())
+      })
+    }
+  },
   methods: {
     toPlayer(event){
       const ds = event.currentTarget.dataset

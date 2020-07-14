@@ -10,7 +10,7 @@
   </view>
   <view class="cards">
     <block wx:for="{{cardInfo}}" wx:key="id">
-      <m-playcard cardInfo="{{item}}"></m-playcard>
+      <m-playcard cardInfo="{{item}}" class="card"></m-playcard>
     </block>
   </view>
 </view>

@@ -16,6 +16,7 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": false,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
@@ -72,7 +73,7 @@
 					"id": 2,
 					"name": "pages/musiclist/musiclist",
 					"pathName": "pages/musiclist/musiclist",
-					"query": "musicid=440961323",
+					"query": "musicid= 3088403692",
 					"scene": null
 				}
 			]

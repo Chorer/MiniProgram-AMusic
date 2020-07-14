@@ -3,15 +3,30 @@
 <view class="player-mask"></view>
 
 <view class="player-info">
-  <!--唱片-->
-  <view class="player-disc {{isPlaying ? 'discRotation':''}}">
-    <image class="player-img imgRotation {{isPlaying ? '':'imgRotationPause'}}" src="{{picUrl}}"></image>
-  </view>
-  <!--进度条-->
+  
+  <!--1.切换区域-->
+  <view class="toggleArea" bindtap="discOrLyric">
+    <!--1.1 唱片-->
+    <view class="player-disc {{isPlaying ? 'discRotation':''}}" hidden="{{isLyric}}">
+      <image class="player-img imgRotation {{isPlaying ? '':'imgRotationPause'}}" src="{{picUrl}}"></image>
+    </view>
+    <!--1.2 歌词-->
+    <view class="player-lyric" hidden="{{!isLyric}}">
+      <m-lyric lyric="{{lyric}}" id="m-lyric"/>
+    </view>     
+  </view>  
+
+  <!--2.进度条-->
   <view class="player-progress-bar">
-    <m-progressbar />
+    <m-progressbar bind:musicEnd="nextMusic" id="m-progressbar" 
+    bind:hightlightLyric="hightlightLyric"
+    bind:musicPlay="musicPlay"
+    bind:musicPause="musicPause"
+    isSame="{{isSame}}"
+    />
   </view>
-  <!--播放控制器-->
+  
+  <!--3.播放控制器-->
   <view class="player-control">
     <text class="iconfont icon-shangyishou" bindtap="preMusic"></text>
     <text class="iconfont {{isPlaying ? 'icon-zanting':'icon-bofang'}}" bindtap="toggleState"></text>
