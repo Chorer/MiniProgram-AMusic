@@ -1,66 +1,38 @@
 // pages/blog/blog.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    isModalShow: false
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  // 发布博客功能
+  onPublish(){
+    wx.getSetting({                           // 判断授权情况
+      success:res => {
+        if(res.authSetting['scope.userInfo']){           // 如果之前授权过
+          wx.getUserInfo({
+            success: res => {
+              this.allowAuth({
+                detail:res.userInfo
+              })
+            }
+          })
+        } else {             // 如果之前没有授权过
+          this.setData({
+            isModalShow: true
+          })
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  allowAuth(event){
+    const userInfo = event.detail
+    wx.navigateTo({
+      url: `../blog-edit/blog-edit?nickName=${userInfo.nickName}&avatarUrl=${userInfo.avatarUrl}`,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  disallowAuth(){
+    wx.showModal({
+      title: '必须同意授权才能发布博客',
+      content: ''
+    });
   }
 })

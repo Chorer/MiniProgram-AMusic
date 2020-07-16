@@ -1,0 +1,5 @@
+<m-bottom-modal isModalShow="{{isModalShow}}">
+  <view slot="panel-slot">
+    <button class="login-button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">获取微信授权信息</button>
+  </view>
+</m-bottom-modal>
