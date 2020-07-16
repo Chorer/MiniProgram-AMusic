@@ -1,0 +1,27 @@
+<!--编辑区-->
+<view class="container">
+  <textarea class="content" placeholder="分享新鲜事..." maxlength="140" auto-focus
+  bindinput="onInput"
+  bindfocus="onFocus"
+  bindblur="onBlur"
+  ></textarea>
+  <view class="image-list">
+    <!--展示图片-->
+    <block wx:for="{{images}}" wx:key="*this">
+      <view class="image-wrap">
+        <i class="iconfont icon-shanchu" bindtap="onDeleteImg" data-index="{{index}}"></i>
+        <image class="image" src="{{item}}" mode="aspectFill" bindtap="onPreviewImg" data-src="{{item}}"></image>
+      </view>
+    </block>
+    <!--选择图片-->
+    <view class="image-wrap selectphoto" bindtap="onChooseImg" hidden="{{images.length == 9}}">
+      <i class="iconfont icon-jiahao"></i>
+    </view>
+  </view>
+</view>
+
+<!--操作区-->
+<view class="footer" style="bottom:{{footerBottom}}">
+  <text class="words-num">{{wordsNum}}</text>
+  <button class="send-btn" bindtap="onPublish">发布</button>
+</view>

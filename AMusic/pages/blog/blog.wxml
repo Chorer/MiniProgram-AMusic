@@ -1,2 +1,19 @@
-<!--pages/blog/blog.wxml-->
-<text>pages/blog/blog.wxml</text>
+<view class="container">
+  <!--顶部导航栏-->
+  <view class="header">
+    <!--发布-->
+    <view class="publish-container" bindtap="onPublish">
+      <i class="iconfont icon-fabu"></i>
+    </view>
+    <!--搜索-->
+    <view class="search-container">
+      <m-searchbar iconfont="iconfont" icon-sousuo="icon-sousuo"></m-searchbar>
+    </view>
+  </view>
+
+  <!--底部卡片-->
+  <view></view>
+
+  <!--底部弹出层-->
+  <m-login isModalShow="{{isModalShow}}" bind:allowAuth="allowAuth" bind:disallowAuth="disallowAuth"></m-login>
+</view>
