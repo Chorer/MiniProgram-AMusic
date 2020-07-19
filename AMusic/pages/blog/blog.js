@@ -84,5 +84,13 @@ Page({
       blogList:[]
     })
     this.loadBlog(0)
+  },
+  onShareAppMessage(event){
+    const blog = event.target.dataset.blog
+    return {
+      title: blog.textContent,
+      path: `/pages/blog-comments/blog-comments?blogId=${blog._id}`,
+      imageUrl: blog.images[0]
+    }
   }
 })

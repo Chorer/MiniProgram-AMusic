@@ -6,7 +6,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    blogid: String
+    blogid: String,
+    blog:Object
   },
   options:{
     styleIsolation: 'apply-shared'

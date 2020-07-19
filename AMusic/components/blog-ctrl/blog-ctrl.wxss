@@ -45,7 +45,24 @@
   font-size: 35rpx;
 }
 
+.share-btn {
+  background-color: #fff;
+  color: rgba(40,47,60,0.8);
+  padding: 0;
+  height: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.share-btn::after {
+  display: none;
+}
+
+.share-hover::after{
+  border: 0;
+}
 
 
 
