@@ -7,12 +7,19 @@
     </view>
     <!--搜索-->
     <view class="search-container">
-      <m-searchbar iconfont="iconfont" icon-sousuo="icon-sousuo"></m-searchbar>
+      <m-searchbar iconfont="iconfont" icon-sousuo="icon-sousuo" bindsearch="onSearch"></m-searchbar>
     </view>
   </view>
 
   <!--底部卡片-->
-  <view></view>
+  <view class="bloglist">
+    <block wx:for="{{blogList}}" wx:key="_id">
+      <view class="blog">
+        <m-blog-card blog="{{item}}" bindtap="goComments" data-blogid="{{item._id}}"></m-blog-card>
+        <m-blog-ctrl blogid="{{item._id}}"></m-blog-ctrl>
+      </view>
+    </block>
+  </view>
 
   <!--底部弹出层-->
   <m-login isModalShow="{{isModalShow}}" bind:allowAuth="allowAuth" bind:disallowAuth="disallowAuth"></m-login>

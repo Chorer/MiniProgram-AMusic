@@ -26,6 +26,7 @@ Page({
     textContent = event.detail.value
   },
   onFocus(event){
+    console.log(event.detail.height)
     this.setData({
       footerBottom: event.detail.height
     })
@@ -88,7 +89,7 @@ Page({
             resolve(res.fileID)
           },
           fail: err => {
-            reject()
+            reject(err)
           }
         })        
       })
@@ -111,6 +112,9 @@ Page({
         title: '发布成功',
       })
       wx.navigateBack()
+      const pageStack =  getCurrentPages()
+      pageStack[pageStack.length - 2].onPullDownRefresh()
+      
     }).catch(err => {
       wx.hideLoading()
       wx.showToast({

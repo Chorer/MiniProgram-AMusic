@@ -1,0 +1,31 @@
+<view class="container">
+  <!--博客内容-->
+  <view class="blog-card">
+    <m-blog-card blog="{{blogContent}}"></m-blog-card>
+  </view>
+  <!--评论tab-->
+  <view class="tab">
+    <view class="tab-item">评论列表</view>
+  </view>
+  <!--提示没有评论-->
+  <view class="no-comment" hidden="{{blogComments.length != 0}}">
+    还没有评论，快抢占沙发吧~
+  </view>
+  <!--评论内容-->
+  <view class="comment-list">
+    <block wx:for="{{blogComments}}" wx:key="_id">
+      <view class="comment">
+        <view class="comment-content">
+          <image class="comment-avatar" src="{{item.avatarUrl}}"></image>
+          <text class="comment-nickname">{{item.nickName}}</text>
+          <view class="comment-text">{{item.content}}</view>
+          <view class="comment-time">{{item.createTime}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!--评论和分享-->
+  <view class="blog-ctrl">
+    <m-blog-ctrl blogid="{{blogId}}" bind:refreshComment="loadDetail"></m-blog-ctrl>
+  </view>
+</view>

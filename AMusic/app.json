@@ -6,6 +6,7 @@
     "pages/musiclist/musiclist",
     "pages/player/player",
     "pages/blog-edit/blog-edit",
+    "pages/blog-comments/blog-comments",
     "pages/test/test"
   ],
   "requiredBackgroundModes":[

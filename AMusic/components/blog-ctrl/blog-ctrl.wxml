@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="control" bindtap="onComment">
+    <i class="iconfont icon-pinglun"></i>
+    <text>评论</text>
+  </view>
+  <view class="control">
+    <i class="iconfont icon-fenxiang"></i>
+    <text>分享</text>
+  </view>
+</view>
+
+<m-login isModalShow="{{isLoginShow}}" 
+  bind:allowAuth="onAllowAuth"
+  bind:disallowAuth="onDisallowAuth"
+></m-login>
+
+<m-bottom-modal isModalShow="{{isCommentShow}}" bottomValue="{{bottomValue}}">
+  <view slot="panel-slot">
+    <textarea name="content" class="comment-content" placeholder-class="placeholder"
+    placeholder="写评论"  fixed="true"
+    bindinput="onInput" 
+    value="{{textContent}}"
+    ></textarea>
+    <button class="send" bindtap="onSend">发送</button>
+  </view>
+</m-bottom-modal>

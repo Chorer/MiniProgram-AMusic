@@ -1,7 +1,32 @@
-// pages/blog/blog.js
+let keyword = ''
+
 Page({
   data: {
-    isModalShow: false
+    isModalShow: false,
+    blogList:[]
+  },
+  onLoad(){
+    this.loadBlog()
+  },
+  loadBlog(start = 0){
+    wx.showLoading({
+      title:'加载中'
+    });
+    wx.cloud.callFunction({
+      name:'blog',
+      data:{
+        keyword,
+        start,
+        $url:'list',
+        count:10
+      }
+    }).then(res => {
+      this.setData({
+        blogList: this.data.blogList.concat(res.result)
+      })
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+    })
   },
   // 发布博客功能
   onPublish(){
@@ -34,5 +59,30 @@ Page({
       title: '必须同意授权才能发布博客',
       content: ''
     });
+  },
+  onPullDownRefresh(){
+    this.setData({
+      blogList:[]
+    })
+    this.loadBlog(0)
+  },
+  onReachBottom(){
+    wx.showLoading({
+      title: '拼命加载中'
+    });
+    this.loadBlog(this.data.blogList.length)
+  },
+  goComments(event){
+    console.log(event)
+    wx.navigateTo({
+      url: `../blog-comments/blog-comments?blogId=${event.target.dataset.blogid}`
+    });
+  },
+  onSearch(event){
+    keyword = event.detail.keyword
+    this.setData({
+      blogList:[]
+    })
+    this.loadBlog(0)
   }
 })

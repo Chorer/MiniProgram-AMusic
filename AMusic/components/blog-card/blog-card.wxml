@@ -1,0 +1,18 @@
+<view class="blog">
+  <!--用户信息-->
+  <view class="blog-title">
+    <image class="blog-avatar" src="{{blog.avatarUrl}}"></image>
+    <view class="blog-box">
+      <view class="blog-name">{{blog.nickName}}</view>
+      <view class="blog-time">{{_createTime}}</view>
+    </view>
+  </view>
+  <!--文本内容-->
+  <view class="blog-content">{{blog.textContent}}</view>
+  <!--图片内容-->
+  <view class="blog-img">
+    <block wx:for="{{blog.images}}" wx:key="item">
+      <image class="img" src="{{item}}" mode="aspectFill" catchtap="onPreviewImg" data-src="{{item}}"></image>
+    </block>
+  </view>
+</view>

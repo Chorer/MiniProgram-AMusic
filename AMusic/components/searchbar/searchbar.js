@@ -1,4 +1,5 @@
-// components/searchbar/searchbar.js
+let keyword = ''
+
 Component({
   /**
    * 组件的属性列表
@@ -22,6 +23,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onInput(event){
+      keyword = event.detail.value
+      if(keyword.length == 0){
+        this.onSearch()
+      }
+    },
+    onSearch(){
+      this.triggerEvent('search',{
+        keyword
+      })
+    }
   }
 })

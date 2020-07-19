@@ -16,6 +16,9 @@ Component({
       this.setData({
         isModalShow: false
       })
+    },
+    preventTouch(){
+      return false
     }
   }
 })

@@ -1,5 +1,9 @@
 <view class="container">
   <i class="iconfont icon-sousuo icon-search"></i>
-  <input type="text" class="search-input" placeholder="{{placeholder}}" placeholder-class="input-placeholder"/>
-  <button class="search-button">搜索</button>
+  <input type="text" class="search-input" 
+    placeholder="{{placeholder}}" 
+    placeholder-class="input-placeholder"
+    bindinput="onInput"
+    />
+  <button class="search-button" bindtap="onSearch">搜索</button>
 </view>

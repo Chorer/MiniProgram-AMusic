@@ -23,7 +23,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx23e5be375da0f5af",
@@ -71,7 +71,7 @@
 				},
 				{
 					"id": 2,
-					"name": "pages/musiclist/musiclist",
+					"name": "musiclist",
 					"pathName": "pages/musiclist/musiclist",
 					"query": "musicid= 3088403692",
 					"scene": null
@@ -88,6 +88,13 @@
 					"name": "blog-edit",
 					"pathName": "pages/blog-edit/blog-edit",
 					"query": "nickName=\"Chor\"&avatarUrl=\"https://wx.qlogo.cn/mmopen/vi_32/eiaNH2Q4LI0x3DqJr…bIeIicfJW3nkdKhlpkvClyVZ8kkjL7xEV5axoATyygwyg/132\"",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "blog-comments",
+					"pathName": "pages/blog-comments/blog-comments",
+					"query": "blogId=08e51e265f114d0d000ee2274a54b3b9",
 					"scene": null
 				}
 			]

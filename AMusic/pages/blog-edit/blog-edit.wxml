@@ -21,7 +21,7 @@
 </view>
 
 <!--操作区-->
-<view class="footer" style="bottom:{{footerBottom}}">
+<view class="footer" style="bottom:{{footerBottom}}px">
   <text class="words-num">{{wordsNum}}</text>
   <button class="send-btn" bindtap="onPublish">发布</button>
 </view>
