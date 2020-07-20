@@ -40,3 +40,9 @@ page {
   margin-bottom: 20rpx;
   box-sizing: border-box;
 }
+
+.nomore {
+  text-align: center;
+  padding: 24rpx;
+  color: #999;
+}

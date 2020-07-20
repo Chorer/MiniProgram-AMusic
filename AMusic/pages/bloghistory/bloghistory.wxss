@@ -1,0 +1,17 @@
+page {
+  background-color: #f1f1f1;
+}
+
+.panel {
+  margin-bottom: 20rpx;
+}
+
+.noblog,.nomore {
+  text-align: center;
+  padding: 24rpx;
+  color: #999;
+}
+
+.noblog text {
+  font-size: 36rpx;
+}

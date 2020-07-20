@@ -1,0 +1,16 @@
+<view>
+  <block wx:for="{{bloglist}}" wx:key="_id">
+    <view class="panel">
+      <m-blog-card blog="{{item}}" bindtap="goComments" data-blogid="{{item._id}}"></m-blog-card>
+      <m-blog-ctrl blogid="{{item._id}}" blog="{{item}}"></m-blog-ctrl>
+    </view>
+  </block>
+</view>
+
+<view class="noblog" hidden="{{!isEmptyShow}}">
+  <text>这里空空如也 ~</text>
+</view>
+
+<view class="nomore" hidden="{{!isTextShow}}">
+  <text>没有更多了 ~</text>
+</view>

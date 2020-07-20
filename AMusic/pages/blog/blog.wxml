@@ -24,3 +24,7 @@
   <!--底部弹出层-->
   <m-login isModalShow="{{isModalShow}}" bind:allowAuth="allowAuth" bind:disallowAuth="disallowAuth"></m-login>
 </view>
+
+<view class="nomore" hidden="{{!isTextShow}}">
+  <text>没有更多了 ~</text>
+</view>

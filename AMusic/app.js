@@ -1,7 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
-    
+  onLaunch() {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -14,10 +13,23 @@ App({
         traceUser: true,
       })
     }
-
     this.globalData = {
-      currentMusicId: -1
-    }
+      currentMusicId: -1,
+      openId:-1
+    },
+    this.getOpenId()
+  },
+  getOpenId(){
+    wx.cloud.callFunction({
+      name:'login'
+    }).then(res => {
+      const openId =  res.result.openid
+      this.globalData.openId = openId
+      // 为每一个用户建立一个歌曲播放历史的本地存储
+      if(wx.getStorageSync(openId) == ''){
+        wx.setStorageSync(openId,[])
+      }
+    })
   },
   getCurrentMusicId(){
     return this.globalData.currentMusicId

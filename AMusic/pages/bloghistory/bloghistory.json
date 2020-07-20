@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "m-blog-card":"/components/blog-card/blog-card",
+    "m-blog-ctrl":"/components/blog-ctrl/blog-ctrl"
+  },
+  "navigationBarTitleText":"我的博客"
+}

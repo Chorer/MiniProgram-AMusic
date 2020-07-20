@@ -7,7 +7,6 @@
   url('//at.alicdn.com/t/font_1270868_07dzftk804lp.svg?t=1562922789527#iconfont') format('svg'); /* iOS 4.1- */
 }
 
-
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;
@@ -58,4 +57,20 @@
 
 .icon-fenxiang:before {
   content: "\e608";
+}
+
+.icon-shoucang:before {
+  content: "\e60f";
+}
+
+.icon-xiangyou:before {
+  content: "\e65c";
+}
+
+.icon-bofangzhong:before {
+  content: "\e61c";
+}
+
+.icon-erweima:before {
+  content: "\e627";
 }

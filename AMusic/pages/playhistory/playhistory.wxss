@@ -1,0 +1,9 @@
+.noblog {
+  text-align: center;
+  padding-top: 20rpx;
+  color: #999;
+}
+
+.noblog text {
+  font-size: 36rpx;
+}

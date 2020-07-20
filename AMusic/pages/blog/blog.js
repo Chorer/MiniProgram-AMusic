@@ -3,7 +3,8 @@ let keyword = ''
 Page({
   data: {
     isModalShow: false,
-    blogList:[]
+    blogList:[],
+    isTextShow: false
   },
   onLoad(){
     this.loadBlog()
@@ -18,12 +19,21 @@ Page({
         keyword,
         start,
         $url:'list',
-        count:10
+        count:4
       }
     }).then(res => {
+      // 记录之前长度
+      let prelength = this.data.blogList.length
       this.setData({
         blogList: this.data.blogList.concat(res.result)
       })
+      // 如果长度没变化，说明数据已经全部请求完了
+      if(prelength == this.data.blogList.length){
+        console.log(777)
+        this.setData({
+          isTextShow:true
+         })
+      }
       wx.hideLoading()
       wx.stopPullDownRefresh()
     })

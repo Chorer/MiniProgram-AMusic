@@ -17,6 +17,19 @@ Page({
     nowIndex = options.index
     this.loadSongInfo()
   },
+  savePlayHistory(){
+    const currentMusic = musiclist[nowIndex]
+    const openId = app.globalData.openId
+    const userHistory = wx.getStorageSync(openId)
+    // 如果本地存储没有该歌曲的播放历史
+    if(userHistory.filter(item => item.id == currentMusic.id).length == 0){
+      userHistory.unshift(currentMusic)
+      wx.setStorage({
+        key: openId,
+        data: userHistory
+      })
+    }
+  },
   loadSongInfo(){
     wx.showLoading({
       title: '加载中',
@@ -59,6 +72,7 @@ Page({
         backgroundAudioManager.singer = songInfo.ar[0].name
         backgroundAudioManager.epname = songInfo.al.name        
       }
+      this.savePlayHistory()
       this.setData({
         isPlaying: true
       })
