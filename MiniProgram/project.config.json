@@ -1,8 +1,6 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
+	"miniprogramRoot": "AMusic/",
+	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -12,9 +10,11 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": false,
 		"uploadWithSourceMap": true,
@@ -28,22 +28,13 @@
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
-	"compileType": "miniprogram",
-	"libVersion": "2.8.1",
 	"appid": "wx23e5be375da0f5af",
 	"projectname": "AMusic",
-	"miniprogramRoot": "AMusic/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-	"watchOptions": {
-		"ignore": []
-	},
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"scripts": {},
+	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -65,7 +56,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,

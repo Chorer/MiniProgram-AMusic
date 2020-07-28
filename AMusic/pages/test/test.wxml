@@ -1,8 +1,0 @@
-<button bind:tap="upload">上传图片</button>
-<button bind:tap="show">查看图片</button>
-<block wx:for="{{images}}" wx:key="fileId">
-  <image src="{{item.fileId}}"></image>
-  <button bind:tap="download" data-fileid="{{item.fileId}}" size="mini">下载图片</button>
-</block>
-<button bind:tap="getPlaylist">请求播放列表</button>
-<button bind:tap="clearAll">清空数据库</button>

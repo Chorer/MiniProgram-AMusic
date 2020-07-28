@@ -12,15 +12,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    get().then(res => {
 
+    })
   },
-  getQrCode(){
+  getQrCode() {
     wx.showLoading({
       title: '生成中',
       mask: true
     });
     wx.cloud.callFunction({
-      name:'getQrCode',
+      name: 'getQrCode',
     }).then(res => {
       const fileId = res.result
       wx.previewImage({

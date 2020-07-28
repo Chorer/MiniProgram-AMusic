@@ -1,0 +1,23 @@
+{
+  "name": "admin-backend",
+  "version": "1.0.0",
+  "description": "小程序后台管理系统的后端代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm run start --prefix ../Admin-frontend",
+    "server": "nodemon app.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-router": "^9.1.0",
+    "koa2-cors": "^2.0.6",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
