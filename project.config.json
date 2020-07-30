@@ -30,7 +30,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.8.1",
-	"appid": "wx23e5be375da0f5af",
+	"appid": "",
 	"projectname": "AMusic",
 	"miniprogramRoot": "AMusic/",
 	"cloudfunctionRoot": "cloudfunctions/",

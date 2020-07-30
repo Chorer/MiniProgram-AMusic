@@ -7,7 +7,15 @@ const koaBody = require('koa-body')
 
 // 跨域
 app.use(cors({
-  origin:['http://localhost:9528'],
+  origin: function(ctx) { 
+    const whiteList = ['']   //可跨域白名单
+    let currentUrl = ctx.request.origin     // 获取向服务器发送请求的前端地址
+    let changeUrl = currentUrl.substring(0,currentUrl.length - 5)   // 截取掉 host
+    if(whiteList.includes(changeUrl)){
+        return changeUrl    
+    }
+    return 'http://localhost:9528'      // 线下开发，本地电脑可以给服务器发送请求
+  },
   credentials: true
 }))
 
@@ -18,14 +26,16 @@ app.use(koaBody({
 
 const playlist = require('./controller/playlist.js')
 const swiper = require('./controller/swiper.js')
+const blog = require('./controller/blog.js')
 router.use('/playlist',playlist.routes())
 router.use('/swiper',swiper.routes())
+router.use('/blog',blog.routes())
 
 app.use(router.routes())
 app.use(router.allowedMethods())
 
 app.use(async(ctx) => {
-  ctx.body = 'Hello World'
+  ctx.body = 123
 })
 
 app.listen(3000,() => {

@@ -3,7 +3,7 @@
     <swiper indicator-dots="true" indicator-active-color="#d43c33" autoplay="true" interval="2000" duration="1000">
       <block wx:for="{{swiperImgUrl}}" wx:key="url">
         <swiper-item>
-          <image class="swiperImg" src="{{item.url}}" mode="widthFix" ></image>
+          <image class="swiperImg" src="{{item.fileid}}" mode="widthFix" ></image>
         </swiper-item>
       </block>
     </swiper>    

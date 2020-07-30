@@ -1,5 +1,5 @@
 {
-  "envId": "test-c469p",
+  "envId": "",
   "functionRoot": "./cloudfunctions",
   "functions": []
 }

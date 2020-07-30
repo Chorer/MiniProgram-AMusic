@@ -1,8 +1,8 @@
 // 要在后台操作云数据库，需要借助http-api，而http-api又需要携带access-token
 // 封装并导出一个可用的getAccessToken函数，每次调用的时候从本地json文件读取最新的access-token
 const rp = require('request-promise')
-const APPID = 'wx23e5be375da0f5af'
-const APPSECRET = '33a7a5b091979f88eb4e652eb94ac9a1'
+const APPID = ''
+const APPSECRET = ''
 const url = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${APPID}&secret=${APPSECRET}`
 
 const fs = require('fs')

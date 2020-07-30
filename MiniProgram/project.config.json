@@ -25,10 +25,10 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
-	"appid": "wx23e5be375da0f5af",
+	"appid": "",
 	"projectname": "AMusic",
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",

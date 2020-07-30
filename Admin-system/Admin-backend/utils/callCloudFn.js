@@ -5,7 +5,7 @@ const callCloudFn = async (ctx,fnName,params) => {
   const token = await getAccessToken()
   const options = {
     method:'POST',
-    uri:`https://api.weixin.qq.com/tcb/invokecloudfunction?access_token=${token}&env=test-c469p&name=${fnName}`,
+    uri:`https://api.weixin.qq.com/tcb/invokecloudfunction?access_token=${token}&env=p&name=${fnName}`,
     body:{
       ...params
     },
